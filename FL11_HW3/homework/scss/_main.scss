@@ -1,0 +1,221 @@
+@mixin underline {
+  content: '';
+  display: block;
+  position: absolute;
+  background: $underline-color;
+  z-index: -1;
+}
+
+@mixin gradient {
+    height: 125px;
+    margin: 11% 0 0 22%;
+    background: linear-gradient(to right, $ready-gradient-left, $ready-gradient-right);
+    display: flex;
+    align-items: center;
+    width: 50%;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+$map: (
+  color: #c3c4c1
+);
+
+body {
+  line-height: 1;
+  background-color: $background-color;
+  font-family: $font;
+}
+
+.header {
+  z-index: 1;
+  width: 100%;
+  height: 590px; 
+  background: $header-image no-repeat center center;
+  border-bottom-right-radius: 40%;
+  color: $text-color;
+  position: relative;
+
+  &_heading {
+    margin-top: 90px;
+    font-weight: 575;
+    max-width: 500px; 
+    font-size: 54px;
+ 
+  
+  &-wrap {
+    float: left;
+    width: 45%;
+    padding: 3% 0 17% 15%;
+    .landing-logo {
+      display: block;
+      float: left;
+      p {
+        font-weight: 575;
+        width: 62px;
+        float: right;
+        letter-spacing: 2px;
+        margin: 5px 10px;            
+        span {
+          display: inline-block;
+          padding-left: 6px;
+          letter-spacing: normal;
+          font-size: 8px;
+        }
+      }
+    }
+  }
+
+    &::before {
+      @include underline;
+      height: 25px;
+      width: 17%;
+      top: 34%;
+    }
+  }
+  &_button {
+    margin-top: 35px;
+    border: 0 solid transparent;
+    border-radius: 3px;
+    background-color: $button-color;
+    padding: 12px 35px;
+    color: white;
+  }
+
+  &_text {
+    max-width: 500px;
+  }
+}
+.section {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  margin-top: -2.5%;
+  &_text {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 575;
+    color: $text-color;
+    margin: 11px auto;
+  }
+  &::before {
+    @include underline;
+    height: 15px;
+    width: 11%;
+    top: 4%;
+    right: 38%;
+  }
+  &_card_wrap {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    margin: 0 12%;
+  }
+  &_card {
+    background-color: $background-gallery-footer;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    z-index: 1;
+    margin-right: 3%;
+    width: 35%;
+    height: 300px;
+    border-radius: 4px;
+    &_heading {
+      color: white;
+      font-size: 20px;
+      padding: 0;
+      line-height: 0;
+      font-weight: 575;
+    }
+    &_text {
+      color: white;
+      font-size: 12px;
+      padding: 0;
+      line-height: 1.5;
+    }
+    span {
+      @include underline;
+      width: 47%;
+      height: 12px;
+      top: 58%;
+      right: 75px;
+    }
+  }
+}
+.section_card:nth-child(1) .section_card_underline {
+  width: 55%;
+  right: 63px;
+}
+.section_card:nth-child(3) .section_card_underline {
+  width: 39%;
+  right: 85px;
+}
+
+.section_banner {
+  @include gradient;
+  position: relative;
+  z-index: 1;
+  border-radius: 3px;
+  &_button {
+    @extend .header_button;
+    margin: 0 55px 0 0;
+  }
+  &_text_wrap {
+    margin: 0 0 0 55px;
+    line-height: 0.5;
+  }
+  &_heading {
+    font-weight: 575;
+    font-size: 24px;
+    color: $text-color;
+  }
+  &_text {
+  color: map_get($map, color);
+    &::after {
+      @include underline;
+      height: 10px;
+      width: 8%;
+      top: 42%;
+      left: 22%;
+    }
+  }
+}
+.footer {
+  height: 210px;
+  background-color: $background-gallery-footer;
+  margin-top: -65px;
+  color: white;
+  &-wrap {
+    color: white;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-flow: row nowrap;
+    margin: 0 10%;
+    padding-top: 75px;
+    justify-content: space-between;
+  }
+  &_text {
+    width: 375px;
+    color: white;
+  }
+  &_logo {
+    p {
+      float: right;
+      margin: 5px 10px;
+      font-weight: 575;
+      width: 63px;
+      letter-spacing: 2px;
+      color: white;
+      span {
+        letter-spacing: normal;
+        display: inline-block;
+        font-size: 8px;
+        padding-left: 6px;
+      }
+    }
+  }
+}
