@@ -1,0 +1,11 @@
+let Ax, Ay, Bx, By, Cx, Cy, midlX, midlY;
+let devider = 2;
+Ax = +prompt('Enter Ax:', '');
+Ay = +prompt('Enter Ay:', '');
+Bx = +prompt('Enter Bx:', '');
+By = +prompt('Enter Bx:', '');
+Cx = +prompt('Enter Cx:', '');
+Cy = +prompt('Enter Cx:', '');
+midlX = (Ax + Bx)/devider;
+midlY = (Ay + By)/devider;
+console.log(Cx === midlX && Cy === midlY);
