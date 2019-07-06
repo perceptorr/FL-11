@@ -1,13 +1,15 @@
 let a, b, c;
-a = +prompt('Enter A', '');
-b = +prompt('Enter B', '');
-c = +prompt('Enter C', '');
-if (a <= 0 || b <= 0 || c <= 0 ) {
-	console.log('Triangle doesn’t exist');	
-} else if(a + b === a + c && a + b === b + c && a + c === b + c){
-	console.log('Eequivalent triangle');
-} else if(a + b === a + c || a + b === b + c || a + c === b + c){
-	console.log('Isosceles triangle');
+a = +prompt('Enter A length', '');
+b = +prompt('Enter B length', '');
+c = +prompt('Enter C length', '');
+if(a + b > c && a + c > b && b + c > a){
+	if(a + b === a + c && a + b === b + c && a + c === b + c){
+		console.log('Eequivalent triangle');
+	} else if(a + b === a + c || a + b === b + c || a + c === b + c){
+		console.log('Isosceles triangle');
+	} else {
+		console.log('Normal triangle');	
+	}
 } else {
-	console.log('Normal triangle');	
+	console.log('Triangle doesn’t exist');
 }
